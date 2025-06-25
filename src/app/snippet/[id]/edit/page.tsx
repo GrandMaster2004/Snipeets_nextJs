@@ -1,23 +1,24 @@
 import EditsnippetForm from "@/components/ui/EditSnippetForm";
-import React from "react";
 import { prisma } from "@/lib/prisma";
-// import { Button } from '@/components/ui/button';
-// import Link from 'next/link';
+import { notFound } from "next/navigation";
 
-interface EditPageProps {
+interface PageProps {
   params: {
     id: string;
   };
 }
 
-const EditpageSnippet = async ({ params }: EditPageProps) => {
-  const id = parseInt(params.id);
+const EditpageSnippet = async ({ params }: PageProps) => {
+  const id = parseInt(params.id); 
+
   const snippet = await prisma.snippet.findUnique({
     where: {
       id,
     },
   });
-  if (!snippet) return <h1>Snippet not found</h1>;
+
+  if (!snippet) return notFound();
+
   return <EditsnippetForm snippet={snippet} />;
 };
 
