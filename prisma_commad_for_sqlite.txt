@@ -1,0 +1,2 @@
+npx prisma migrate dev --name added snippet model 
+npm i @monaco-editor/react --legacy--peer-deps
