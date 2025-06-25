@@ -1,6 +1,6 @@
 "use client";
 import { Editor } from "@monaco-editor/react";
-import type { Snippet } from "@prisma/client";
+import type { Snippet } from "@/generated/prisma";
 import { Button } from "@/components/ui/button";
 // import saveSnippet from "@/actions";
 import { saveSnippet } from "@/actions";

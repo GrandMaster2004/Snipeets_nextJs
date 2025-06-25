@@ -40,6 +40,7 @@ const SnippetDetailPage = async ({ params }: { params: { id: string } }) => {
       id,
     },
   });
+  // if(!snippet.id) notFound();
   const deletesnip = deleteSnippet.bind(null, snippet.id);
   if (!snippet) notFound();
 
